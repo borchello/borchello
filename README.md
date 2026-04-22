@@ -9,6 +9,7 @@ from system architecture to production deployment.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/bfaktor)
 [![X](https://img.shields.io/badge/X-000000?style=flat&logo=x&logoColor=white)](https://x.com/jcooperstation)
+[![TERMINAL](https://img.shields.io/badge/TERMINAL-runner.trader-brightgreen?style=flat&logo=googlechrome&logoColor=white)](https://runner.trader)
 
 </div>
 
@@ -27,7 +28,7 @@ Professional trading terminal for Polymarket built around information asymmetry 
 - **Smart Copy Trading** — follows top-performing wallets with configurable risk management
 - **Whale Intelligence** — real-time monitoring of trades ≥ $5K with trader profiling
 
-`Production` · `Live users` · `Polymarket CLOB API` · `Privy Server Signers` · `ZeroDev AA`
+`Production` · `Live users` · `Polymarket CLOB API` · `Privy Server Signers` · `ZeroDev AA` · [**→ runner.trader**](https://runner.trader)
 
 ---
 
