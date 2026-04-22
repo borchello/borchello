@@ -1,123 +1,105 @@
+<div align="center">
+
 # Boris Faktorovich
 
-**AI Builder & Founder · AI Systems Architect · Solo Product Engineer**
+**AI Builder · Solo Product Engineer · Web3 Systems**
 
-Designing and shipping full-stack AI-powered products end-to-end — from system architecture to production deployment.
+Designing and shipping full-stack AI-powered products end-to-end —
+from system architecture to production deployment.
 
----
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/bfaktor)
+[![X](https://img.shields.io/badge/X-000000?style=flat&logo=x&logoColor=white)](https://x.com/jcooperstation)
 
-## Runner Terminal
-
-> Real-time prediction market intelligence terminal built on [Polymarket](https://polymarket.com)
-
-A professional-grade trading terminal with an embedded AI intelligence layer, signal engine, and copy trading automation — built solo from scratch.
+</div>
 
 ---
 
-## AI & Intelligence Systems
+## Featured Projects
 
-### Runner AI — Context-Aware Market Assistant
-- **GPT-4o-mini** integration with multi-mode inference (`fast` / `research` / `markets`)
-- Dynamic platform data snapshot injected into every prompt — model never hallucinates market data
-- Cost-optimized token budgeting per mode ($0.00023–$0.00045/req)
-- Rate limiting, request isolation, structured prompt engineering
+### TERMINAL — Intelligence-Driven Prediction Market Terminal
+> TypeScript · React · Node.js · WebSocket · SSE · Polygon · GPT-4o · CLOB
 
-### Oracle Signal Engine — Predictive Intelligence Pipeline
-- Custom **signal detection algorithm**: news → entity extraction → market matching → confirmation
-- Signals scored by confidence threshold (≥0.35) and confirmed via real-time price spike detection
-- Full signal lifecycle: `PENDING → CONFIRMED → EXPIRED` with persistence
-- **Correlation map**: cross-market signal amplification (related markets boosted on match)
-- **Topic tracker**: detects recurring themes across news streams
+Professional trading terminal for Polymarket built around information asymmetry as the only durable edge. Systematically converts real-world intelligence signals into actionable trade opportunities before the market prices them in.
 
-### Adaptive Scorer — Bayesian Feature Weight Learning
-- **Bayesian shrinkage algorithm** for self-improving signal accuracy over time
-- Analyzes 30-day signal resolution history per entity feature type
-- Formula: `w_eff = (k × prior + n × empirical) / (k + n)` — prevents overfitting on small samples
-- Weight bounds ±50% of prior to prevent adversarial drift
-- Persisted to DB, refreshed every 24h, served from in-memory cache
+- **ATLAS SIGINT Module** — 10 live intelligence sources: military aircraft (ADS-B), naval vessels (AIS), GPS jamming (GPSJam), satellite passes (CelesTrak), global news (GDELT), Telegram MTProto. EventFusionEngine clusters events within 500km / 2h window into confidence-scored FusionEvents
+- **Oracle Signal Engine** — news-to-market prediction pipeline with Bayesian weight adaptation and accuracy tracking
+- **Non-Custodial Trading** — browser-side session keys via Privy. Private keys never leave the device. Server cannot move USDC
+- **Smart Copy Trading** — follows top-performing wallets with configurable risk management
+- **Whale Intelligence** — real-time monitoring of trades ≥ $5K with trader profiling
 
-### Entity Extractor — Deterministic NLP Pipeline
-- Dictionary + regex NLP engine (no LLM dependency — fast, zero cost, deterministic)
-- Multilingual: **English, Russian, Hebrew, Arabic, Farsi** entity patterns
-- Extracts: countries, people, organizations, topics, keywords, Twitter handles, Telegram references
-- Military/geopolitical terminology taxonomy
-
-### AI Briefing Service (SIGINT)
-- Automated intelligence summaries every 30 min using **GPT-4o-mini**
-- Triggered only when threat score > 0.40 (cost-gated)
-- Output: SITREP → Key developments → Market implications → 24h threat outlook
-- Graceful degradation to rule-based briefing if API unavailable
-
-### Trader Analysis Engine
-- Behavioral scoring: streak analysis, timing patterns, sizing consistency, drawdown profiling
-- Bot detection heuristics, network analysis, benchmark comparison
-- Portfolio-level analytics with calendar heatmaps and category breakdowns
+`Production` · `Live users` · `Polymarket CLOB API` · `Privy Server Signers` · `ZeroDev AA`
 
 ---
 
-## Trading & Web3 Infrastructure
+### sol-arb — Solana MEV & Liquidation Engine
+> Rust · Tokio · Geyser gRPC · Jito · Jupiter · Kamino · Kelly Criterion
 
-- **Copy Trading Engine** — Privy Server Signers (non-custodial), virtual demo mode + live execution
-- **CLOB Order Execution** — direct Polymarket API, browser-direct submission (datacenter geoblock bypass)
-- **AA Wallets** — ZeroDev ERC-4337 account abstraction
-- **Order Aggregator** — partial-fill deduplication for Polymarket CLOB
-- **Real-time feeds** — WebSocket + SSE with heartbeat and WSS fallback chain
-- **Audit Ledger** — immutable on-chain-style transaction log with reconciliation
+Two independent on-chain engines running live on Solana mainnet.
+
+- **DEX Arbitrage** — multi-hop path routing across Raydium, Orca, Meteora, Phoenix, Lifinity. Jito bundle submission with Kelly criterion tip sizing. Geyser gRPC for zero-lag pool state
+- **Kamino Liquidation** — monitors ~100K lending obligations in real time. Predictive oracle modeling detects liquidatable positions before on-chain confirmation. Pre-built tx templates → < 1ms to finalize on trigger. Atomic liquidation + collateral swap via Jito
+
+`Live mainnet` · `Sub-millisecond execution` · `Flash loan fallback (NAVI)`
+
+---
+
+### sui-arb — Sui Blockchain Arbitrage Bot
+> Rust · Tokio · SPFA · CLMM · CLOB · AMM · Flash Loans · Prometheus
+
+High-frequency arbitrage bot for the Sui blockchain.
+
+- **Negative-cycle detection** via parallel SPFA across all pool types — tokens as nodes, pools as edges weighted by `-log(rate × (1 - fee))`
+- **Execution** — flash loan (NAVI) → PTB build → Ed25519 sign → SHIO bundle or SIP-45 direct submit
+- **DEX coverage** — Cetus (CLMM), Turbos (CLMM), DeepBook (CLOB), Kriya / FlowX / Aftermath (AMM)
+- **Risk engine** — daily loss caps, per-trade limits, consecutive-failure circuit breaker
+- **Observability** — Prometheus metrics, per-step pipeline tracing, Telegram alerts
+
+`Live mainnet` · `Parallel SPFA` · `Full DEX coverage`
+
+---
+
+## Other Projects
+
+| Project | Description | Stack |
+|---------|-------------|-------|
+| **Funding Arbitrage** | Delta-neutral funding-rate arbitrage across 13 CEX perpetual markets. Maker-first execution engine, orphan detection, live capital | Python · asyncio · 13 CEX APIs |
+| **SENTINEL** | DeFi vulnerability hunting platform. 7-layer pipeline: static analysis → symbolic execution → formal verification → AI reasoning → PoC synthesis | Python · Slither · Halmos · Certora · Claude API · Neo4j · Temporal |
+| **Bootstrapr** | AI mentor for indie founders. Aggregates 10K+ founder case studies into personalized playbooks with citations and next actions | Python · Claude API · pgvector · Voyage · Cohere · Langfuse |
+| **DesignSpark** | Design-first AI web app builder. Turborepo monorepo with curated design systems and AI customization | Next.js 15 · React 19 · tRPC v11 · Drizzle · Fastify · Turborepo |
+| **Domain Hunter** | Domain discovery and authority scoring. Crawls sources, parses zone dumps, scores via Ahrefs DR and Product Hunt signals | Python · Ahrefs API · WHOIS |
 
 ---
 
 ## Tech Stack
 
-**AI / Intelligence**
-![OpenAI](https://img.shields.io/badge/OpenAI_GPT--4o--mini-412991?style=flat&logo=openai&logoColor=white)
-![Custom NLP](https://img.shields.io/badge/Custom_NLP_Pipeline-FF6B35?style=flat)
-![Bayesian ML](https://img.shields.io/badge/Bayesian_Adaptive_Scoring-0066CC?style=flat)
-![Signal Engine](https://img.shields.io/badge/Signal_Engine-22C55E?style=flat)
+**Languages**
+
+![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 
 **Frontend**
-![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
+
+![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat&logo=framer&logoColor=white)
-![TanStack Query](https://img.shields.io/badge/TanStack_Query-FF4154?style=flat)
-![Three.js](https://img.shields.io/badge/Three.js-000000?style=flat&logo=threedotjs&logoColor=white)
-![Recharts](https://img.shields.io/badge/Recharts-22B5BF?style=flat)
 
 **Backend**
+
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)
-![Express](https://img.shields.io/badge/Express-000000?style=flat&logo=express&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
-![WebSocket](https://img.shields.io/badge/WebSocket-010101?style=flat)
-![SSE](https://img.shields.io/badge/SSE_Streaming-FF6B35?style=flat)
-![Sentry](https://img.shields.io/badge/Sentry-362D59?style=flat&logo=sentry&logoColor=white)
-![Pino](https://img.shields.io/badge/Pino_Logger-green?style=flat)
-
-**Database & Infra**
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white)
-![Drizzle ORM](https://img.shields.io/badge/Drizzle_ORM-C5F74F?style=flat)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat&logo=redis&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat&logo=supabase&logoColor=white)
-![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat&logo=nginx&logoColor=white)
 
-**Web3 & Auth**
+**AI / ML**
+
+![Claude](https://img.shields.io/badge/Claude_API-D97757?style=flat&logo=anthropic&logoColor=white)
+![OpenAI](https://img.shields.io/badge/GPT--4o-412991?style=flat&logo=openai&logoColor=white)
+![pgvector](https://img.shields.io/badge/pgvector-4169E1?style=flat&logo=postgresql&logoColor=white)
+
+**Web3**
+
+![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat&logo=solana&logoColor=white)
+![Sui](https://img.shields.io/badge/Sui-4DA2FF?style=flat&logo=sui&logoColor=white)
+![Polygon](https://img.shields.io/badge/Polygon-8247E5?style=flat&logo=polygon&logoColor=white)
 ![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?style=flat&logo=ethereum&logoColor=white)
-![Privy](https://img.shields.io/badge/Privy_Server_Signers-6366F1?style=flat)
-![ZeroDev](https://img.shields.io/badge/ZeroDev_AA_ERC--4337-FF6B00?style=flat)
-![Wagmi](https://img.shields.io/badge/Wagmi_+_Viem-1C1C1C?style=flat)
-![SIWE](https://img.shields.io/badge/SIWE-3C3C3D?style=flat)
-![Polymarket](https://img.shields.io/badge/Polymarket_CLOB-0066FF?style=flat)
-
----
-
-## Stats
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=borchello&show_icons=true&theme=dark&hide_border=true&count_private=true)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=borchello&layout=compact&theme=dark&hide_border=true)
-
----
-
-## Connect
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/bfaktor)
-[![X](https://img.shields.io/badge/X-000000?style=flat&logo=x&logoColor=white)](https://x.com/jcooperstation)
